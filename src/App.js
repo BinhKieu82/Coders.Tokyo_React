@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoItem from './components/TodoItem';
+import TrafficLight from './components/TrafficLight';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TrafficLight />
         {
           this.todoItems.map((item, index) => <TodoItem key ={index} item={item} />)
         }
