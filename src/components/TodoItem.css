@@ -1,10 +1,46 @@
 .TodoItem {
+  position: relative;    
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 300;
   font-size: 2em;
   color: #000;
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+  display: flex;
 }
-.TodoItem-complete {
+
+.TodoItem:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.TodoItem > p { /* select all p within .TodoItem class */
+  margin: 0 0 0 10px;
+}
+
+.TodoItem-complete > p {
   text-decoration: line-through;
   opacity: 0.3;
+}
+
+.TodoItem .remove {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+.TodoItem:hover .remove {
+  display: block;
+}
+
+.TodoItem .remove:after {
+  content: '×';
 }
